@@ -41,35 +41,35 @@ data_panen = {
     }
 }
 
-print("Seluruh Data Panen:")
+print("Seluruh Data Panen :")
 for lokasi, data in data_panen.items():
-    print(f"Nama Lokasi: {data['nama_lokasi']}")
+    print(f"Nama Lokasi : {data['nama_lokasi']}")
     for tanaman, jumlah in data['hasil_panen'].items():
-        print(f"  {tanaman}: {jumlah} kg")
+        print(f"  {tanaman} : {jumlah} kg")
     print()
 
 jumlah_jagung_lokasi2 = data_panen['lokasi2']['hasil_panen']['jagung']
-print(f"Jumlah hasil panen jagung di lokasi2: {jumlah_jagung_lokasi2} kg\n")
+print(f"Jumlah hasil panen jagung di lokasi2 : {jumlah_jagung_lokasi2} kg\n")
 
 nama_lokasi3 = data_panen['lokasi3']['nama_lokasi']
-print(f"Nama lokasi dari lokasi3: {nama_lokasi3}\n")
+print(f"Nama lokasi dari lokasi3 : {nama_lokasi3}\n")
 
 hasil_panen_padi = {lokasi: data['hasil_panen']['padi'] for lokasi, data in data_panen.items()}
 hasil_panen_kedelai = {lokasi: data['hasil_panen']['kedelai'] for lokasi, data in data_panen.items()}
-print("Jumlah hasil panen padi setiap lokasi:", hasil_panen_padi)
-print("Jumlah hasil panen kedelai setiap lokasi:", hasil_panen_kedelai, "\n")
+print("Jumlah hasil panen padi setiap lokasi :", hasil_panen_padi)
+print("Jumlah hasil panen kedelai setiap lokasi :", hasil_panen_kedelai, "\n")
 
 padi_total = sum(hasil_panen_padi.values())
 kedelai_total = sum(hasil_panen_kedelai.values())
-print(f"Total hasil panen padi: {padi_total} kg")
-print(f"Total hasil panen kedelai: {kedelai_total} kg\n")
+print(f"Total hasil panen padi : {padi_total} kg")
+print(f"Total hasil panen kedelai : {kedelai_total} kg\n")
 
-print("Evaluasi Lokasi:")
+print("Evaluasi Lokasi :")
 for lokasi, data in data_panen.items():
     nama_lokasi = data['nama_lokasi']
     padi = data['hasil_panen']['padi']
     jagung = data['hasil_panen']['jagung']
     if padi > 1300 or jagung > 800:
-        print(f"{nama_lokasi}: Memerlukan perhatian khusus (Padi: {padi}, Jagung: {jagung})")
+        print(f"{nama_lokasi} : Memerlukan perhatian khusus (Padi : {padi}, Jagung : {jagung})")
     else:
-        print(f"{nama_lokasi}: Kondisi baik (Padi: {padi}, Jagung: {jagung})")
+        print(f"{nama_lokasi} : Kondisi baik (Padi : {padi}, Jagung : {jagung})")
